@@ -3,7 +3,7 @@
 use \Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
-        ComponentRegistrar::MODULE,
+    ComponentRegistrar::MODULE,
     'Codilar_Vendor',
     __DIR__
 );

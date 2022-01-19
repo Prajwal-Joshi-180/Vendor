@@ -8,11 +8,16 @@ use Magento\Ui\DataProvider\AbstractDataProvider;
 
 class EditDataProvider extends AbstractDataProvider
 {
+    /**
+     * @var loadedData
+     */
     protected $loadedData;
+
     /**
      * @var MagentoRequestInterface
      */
     private $request;
+
     /**
      * @var CollectionFactory
      */
@@ -28,6 +33,7 @@ class EditDataProvider extends AbstractDataProvider
      * @param array $meta
      * @param array $data
      */
+
     public function __construct(
         $name,
         $primaryFieldName,
@@ -48,6 +54,8 @@ class EditDataProvider extends AbstractDataProvider
         $this->collection = $collectionFactory->create();
         $this->request = $request;
     }
+
+
     /**
      * @return array
      */
@@ -66,4 +74,3 @@ class EditDataProvider extends AbstractDataProvider
         return $this->loadedData;
     }
 }
-

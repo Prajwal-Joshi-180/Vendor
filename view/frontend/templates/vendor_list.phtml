@@ -14,10 +14,10 @@ $vendors = $block->getVendor();
             </tr>
             <?php foreach ($block->getVendor() as $vendor):
                 if($vendor->getIsActive()) {?>
-                <tr>
+                    <tr>
                     <td><?php echo $vendor->getEntityId()?></td>
                     <td><a href="<?php echo $block->getVendorUrl(). 'entity_id/' . $vendor->getEntityId() ?>"><?php echo $vendor->getVendorName()?></a></td>
-                    <?php }?>
+                <?php }?>
                 </tr>
             <?php endforeach; ?>
         </table>

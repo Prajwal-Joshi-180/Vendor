@@ -1,8 +1,6 @@
 <?php
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
+
+
 namespace Codilar\Vendor\Controller\Adminhtml\Index;
 
 use Magento\Framework\App\Action\HttpPostActionInterface;
@@ -12,7 +10,7 @@ use Magento\Ui\Component\MassAction\Filter;
 use Codilar\Vendor\Model\ResourceModel\Vendor\CollectionFactory;
 
 /**
- * Class MassEnable
+ * Class MassDisable
  */
 class MassDisable extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {
@@ -51,6 +49,12 @@ class MassDisable extends \Magento\Backend\App\Action implements HttpPostActionI
      * @return \Magento\Backend\Model\View\Result\Redirect
      * @throws \Magento\Framework\Exception\LocalizedException|\Exception
      */
+
+
+    /**
+     * @return string
+     */
+
     public function execute()
     {
         $collection = $this->filter->getCollection($this->collectionFactory->create());
@@ -62,8 +66,6 @@ class MassDisable extends \Magento\Backend\App\Action implements HttpPostActionI
         $this->messageManager->addSuccessMessage(
             __('A total of %1 record(s) have been disabled.', $collection->getSize())
         );
-
-        /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
         $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
         return $resultRedirect->setPath('*/*/index');
     }

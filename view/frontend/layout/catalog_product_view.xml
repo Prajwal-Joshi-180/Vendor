@@ -9,7 +9,7 @@
                    template="Codilar_Vendor::vendor_name.phtml"
                    name="codilar_vendor_name"
                    cacheable="false"
-                   after="-"     
+                   after="-"
             />
         </referenceContainer>
     </body>

@@ -22,6 +22,7 @@ class AddAttribute implements DataPatchInterface, PatchRevertableInterface
      * @var ModuleDataSetupInterface
      */
     private $moduleDataSetup;
+    
     /**
      * @var EavSetupFactory
      */

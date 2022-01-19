@@ -1,8 +1,6 @@
 <?php
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
+
+
 namespace Codilar\Vendor\Block\Adminhtml\Buttons;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
@@ -10,7 +8,6 @@ use Magento\Ui\Component\Control\Container;
 
 /**
  * Class SaveButton
- * @package Magento\Customer\Block\Adminhtml\Edit
  */
 class SaveButton extends GenericButton implements ButtonProviderInterface
 {
@@ -75,6 +72,13 @@ class SaveButton extends GenericButton implements ButtonProviderInterface
 
         return $options;
     }
+
+
+    /**
+     * Get URL for Save Button
+     *
+     * @return string
+     */
     public function getSaveUrl()
     {
         return $this->getUrl('vendor/index/form');

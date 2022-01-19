@@ -1,8 +1,5 @@
 <?php
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
+
 
 namespace Codilar\Vendor\Block;
 
@@ -31,6 +28,8 @@ use Magento\Catalog\Block\Product\Context;
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Codilar\Vendor\Model\Vendor;
 use Codilar\Vendor\Model\ResourceModel\Vendor\CollectionFactory;
+
+
 /**
  * Product list
  * @api
@@ -80,7 +79,6 @@ class VendorProduct extends \Magento\Catalog\Block\Product\AbstractProduct imple
      */
     protected $collectionFactory;
 
-
     /**
      * @var SearchCriteriaBuilder
      */
@@ -95,6 +93,7 @@ class VendorProduct extends \Magento\Catalog\Block\Product\AbstractProduct imple
      * @param array $data
      * @param OutputHelper|null $outputHelper
      */
+
     public function __construct(
         Context $context,
         PostHelper $postDataHelper,
@@ -106,7 +105,7 @@ class VendorProduct extends \Magento\Catalog\Block\Product\AbstractProduct imple
         SearchCriteriaBuilder $searchCriteriaBuilder,
         CollectionFactory $collectionFactory,
         array $data = [],
-        ?OutputHelper $outputHelper = null
+        OutputHelper $outputHelper = null
     ) {
         $this->_catalogLayer = $layerResolver->get();
         $this->_postDataHelper = $postDataHelper;
@@ -548,10 +547,21 @@ class VendorProduct extends \Magento\Catalog\Block\Product\AbstractProduct imple
         $toolbar->setCollection($collection);
         $this->setChild('toolbar', $toolbar);
     }
+
+    /**
+     * Get URL for view page
+     *
+     * @return string
+     */
     public function getVendorListUrl()
     {
         return $this->getUrl('vendor/vendor/view');
     }
+
+
+    /**
+     * @return details[]
+     */
     public function getVendorDetails()
     {
         $id = $this->getRequest()->getParam('entity_id');
@@ -567,5 +577,4 @@ class VendorProduct extends \Magento\Catalog\Block\Product\AbstractProduct imple
             }
         }
     }
-
 }

@@ -32,10 +32,7 @@ class View extends Action
     }
 
     /**
-     * Execute action based on request and return result
-     *
-     * @return \Magento\Framework\Controller\ResultInterface|ResponseInterface
-     * @throws \Magento\Framework\Exception\NotFoundException
+     * @return page
      */
     public function execute()
     {

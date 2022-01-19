@@ -13,6 +13,7 @@ class VendorList extends Template
      * @var CollectionFactory
      */
     protected $collectionFactory;
+
     /**
      * @var Data
      */
@@ -20,8 +21,8 @@ class VendorList extends Template
 
     public function __construct(
         Template\Context $context,
-        Data $enableData,
         CollectionFactory $collectionFactory,
+        Data $enableData,
         array $data = []
     )
     {
@@ -31,17 +32,27 @@ class VendorList extends Template
     }
 
     /**
-     * @return emp[]
+     * @return vendor[]
      */
     public function getVendor()
     {
         $collection = $this->collectionFactory->create();
         return $collection->getItems();
     }
+
+    /**
+     * Get URL for index page
+     *
+     * @return string
+     */
     public function getVendorUrl()
     {
         return $this->getUrl('vendor/vendor/index');
     }
+
+    /**
+     * @return int
+     */
     public function  VendorEnable()
     {
         if($this->enableData->isEnable()) {

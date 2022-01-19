@@ -24,6 +24,7 @@ class Save extends Action
         ModelFactory $modelFactory,
         ResourceModel $resourceModel
     )
+
     {
         parent::__construct($context);
         $this->modelFactory = $modelFactory;
@@ -34,26 +35,34 @@ class Save extends Action
     {
         $data = $this->getRequest()->getParams();
         $emptyVendor = $this->modelFactory->create();
+
         if(!empty($data['entity_id'])){
-        $this->resourceModel->load($emptyVendor,$data['entity_id']);
+            $this->resourceModel->load($emptyVendor,$data['entity_id']);
         }
         $emptyVendor->setIsActive($data['is_active'] ?? 1);
         $emptyVendor->setVendorName($data['vendor_name'] ?? null);
         $emptyVendor->setWebsite($data['website'] ?? null);
         $emptyVendor->setDescription($data['description'] ?? null);
+
         try {
-            
+
             $this->resourceModel->save($emptyVendor);
             $this->messageManager->addSuccessMessage(__('Vendor %1 saved successfully', $emptyVendor->getVendorName()));
-        } catch (\Exception $exception) {
+        }
+        catch (\Exception $exception) {
             $this->messageManager->addErrorMessage(__("Error saving Vendor"));
         }
+
         if ($this->getRequest()->getParam('back')) {
             $id = $emptyVendor->getEntityId();
             return $this->resultRedirectFactory->create()->setPath('*/*/edit', ['entity_id' => $id, '_current' => true]);
         }
+
+        /**
+        * @return string
+        */
         else{
-        return $this->resultRedirectFactory->create()->setPath('*/*/index');
+            return $this->resultRedirectFactory->create()->setPath('*/*/index');
         }
     }
 }

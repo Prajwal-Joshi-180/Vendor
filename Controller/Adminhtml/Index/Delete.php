@@ -18,12 +18,13 @@ class Delete extends Action
      * @var ResourceModel
      */
     protected $resourceModel;
+
     /**
-     * Delete Constructor
      * @param Context $context
-     * @param ResourceModel $ResourceModel
      * @param ModelFactory $ModelFactory
+     * @param ResourceModel $ResourceModel
      */
+
     public function __construct(
         Context $context,
         ModelFactory $modelFactory,
@@ -35,6 +36,11 @@ class Delete extends Action
         $this->resourceModel = $resourceModel;
     }
 
+    /**
+     * Get URL for index page
+     *
+     * @return string
+     */
     public function execute()
     {
         try {

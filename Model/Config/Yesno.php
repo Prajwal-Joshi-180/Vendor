@@ -1,15 +1,23 @@
 <?php
- namespace Codilar\Vendor\Model\Config;
- 
- class Yesno implements \Magento\Framework\Option\ArrayInterface
- {
-     public function toOptionArray()
-     {
-         return [['value' => 1, 'label' => __('Yes')], ['value' => 0, 'label' => __('No')]];
-     }
- 
-     public function toArray()
-     {
-         return [0 => __('No'), 1 => __('Yes')];
-     }
- }
+
+namespace Codilar\Vendor\Model\Config;
+
+class Yesno implements \Magento\Framework\Option\ArrayInterface
+{
+
+    /**
+     * @return array
+     */
+    public function toOptionArray()
+    {
+        return [['value' => 1, 'label' => __('Yes')], ['value' => 0, 'label' => __('No')]];
+    }
+
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        return [0 => __('No'), 1 => __('Yes')];
+    }
+}

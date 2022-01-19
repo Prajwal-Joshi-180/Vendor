@@ -1,8 +1,6 @@
 <?php
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
+
+
 namespace Codilar\Vendor\Controller\Adminhtml\Index;
 
 use Magento\Framework\App\Action\HttpPostActionInterface;
@@ -46,10 +44,7 @@ class MassEnable extends \Magento\Backend\App\Action implements HttpPostActionIn
     }
 
     /**
-     * Execute action
-     *
-     * @return \Magento\Backend\Model\View\Result\Redirect
-     * @throws \Magento\Framework\Exception\LocalizedException|\Exception
+     * @return string
      */
     public function execute()
     {
@@ -62,8 +57,6 @@ class MassEnable extends \Magento\Backend\App\Action implements HttpPostActionIn
         $this->messageManager->addSuccessMessage(
             __('A total of %1 record(s) have been enabled.', $collection->getSize())
         );
-
-        /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
         $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
         return $resultRedirect->setPath('*/*/index');
     }

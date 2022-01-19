@@ -22,6 +22,10 @@ class Index extends \Magento\Backend\App\Action
         $this->pageFactory = $pageFactory;
     }
 
+    /**
+     *
+     * @return page
+     */
     public function execute()
     {
         return $this->pageFactory->create();

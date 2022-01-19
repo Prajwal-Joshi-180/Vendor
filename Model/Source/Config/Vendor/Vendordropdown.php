@@ -1,19 +1,28 @@
 <?php
+
 namespace Codilar\Vendor\Model\Source\Config\Vendor;
 
-
+use Codilar\Vendor\Model\ResourceModel\Vendor\Collection;
 
 class Vendordropdown extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
 {
-
+    
+    /**
+     * @var Collection
+     */
     protected $collections;
 
     public function __construct(
-        \Codilar\Vendor\Model\ResourceModel\Vendor\Collection $collections
-    ) {
+        Collection $collections
+    )
+    {
         $this->collections = $collections;
     }
 
+
+    /**
+     * @return array
+     */
     public function getAllOptions()
     {
 

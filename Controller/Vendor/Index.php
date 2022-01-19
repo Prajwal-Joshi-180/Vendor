@@ -31,11 +31,9 @@ class Index extends Action
         $this->enableData=$enableData;
     }
 
+
     /**
-     * Execute action based on request and return result
-     *
-     * @return \Magento\Framework\Controller\ResultInterface|ResponseInterface
-     * @throws \Magento\Framework\Exception\NotFoundException
+     * @return page
      */
     public function execute()
     {
